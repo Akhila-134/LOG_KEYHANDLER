@@ -28,5 +28,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install pynput
     - name: execute py script # run Keylogger.py
-      run: python Keylogger.py
+      run: |
+        pip install pytest pytest-cov
+        pytest Keylogger.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
         
