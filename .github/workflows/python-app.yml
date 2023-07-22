@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -26,6 +26,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install pynput --onefile --hidden-import=pynput.keyboard._xorg
+        python -m pip install pynput
     - name: execute py script # run Keylogger.py
       run: python Keylogger.py
